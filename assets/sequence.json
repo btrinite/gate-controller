@@ -1,0 +1,36 @@
+{
+    "sequences":["initial", "simple"],
+    "subsets":{
+        "initial": {
+            "sequences":[
+                {"id":"G0", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
+                {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
+                {"id":"G2", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
+                {"id":"G3", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
+                {"id":"Pause", "type":"pause", "delay":5000},
+                {"id":"G0", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":100},
+                {"id":"G1", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":100},
+                {"id":"G2", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":100},
+                {"id":"G3", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":100},
+                {"id":"G0", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G2", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G3", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"next", "type":"nextOnTimeout", "delay":5000}
+            ]
+        },
+        "simple": {
+            "sequences":[
+                {"id":"G0", "figure":"PassIn"},
+                {"id":"G1", "figure":"AvoidLeft"},
+                {"id":"G2", "figure":"AvoidRight"},
+                {"id":"G3", "figure":"PassIn"},
+                {"id":"restart", "type":"restartOnTimeout", "delay":5000}
+            ]
+        }
+    }
+}

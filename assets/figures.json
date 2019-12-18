@@ -1,0 +1,12 @@
+{
+    "PassIn" : { "segments":["on", "on", "on", "on", "on", "on", "on", "on"]},
+    "Avoid" : { "segments":["off", "off", "off", "off", "off", "off", "off", "off"]},
+    "AvoidLeft" : { "segments":["off", "off", "off", "off", "off", "off", "on", "on"]},
+    "AvoidRight" : { "segments":["off", "off", "on", "on", "off", "off", "off", "off"]},
+    "AvoidAbove" : { "segments":["on", "on", "off", "off", "off", "off", "off", "off"]},
+    "AvoidBelow" : { "segments":["off", "off", "off", "off", "on", "on", "off", "off"]},
+    "PassLeft" : { "segments":["on", "off", "off", "off", "off", "on", "on", "on"]},
+    "PassRight" : { "segments":["off", "on", "on", "on", "on", "off", "off", "off"]},
+    "PassTop" : { "segments":["on", "on", "on", "off", "off", "off", "off", "on"]},
+    "PassBottom" : { "segments":["off", "off", "off", "on", "on", "on", "on", "off"]}
+}
