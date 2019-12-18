@@ -15,8 +15,8 @@ class GateDrivers  {
 
     constructor() {
       this.driversState={}
-      for (const drv of gateDriversDescr) {
-        this.driversState[drv.id] = {state:GATE.DISCONNECTED}
+      for (const [idx, drv] of gateDriversDescr.entries()) {
+        this.driversState[idx] = {state:GATE.DISCONNECTED}
       }
     }
 

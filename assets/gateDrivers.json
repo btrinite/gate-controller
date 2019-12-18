@@ -1,6 +1,6 @@
 [
     {  "id":"G0",
-        "mac":"2462abb06e8d", "comment":"ok"},
+        "mac":"246f280b0ccd", "comment":"ok"},
     {  "id":"G1",
         "mac":"2462abb1c649", "comment":"ok"},
     {  "id":"G2",
@@ -8,5 +8,5 @@
     {  "id":"G3",
         "mac":"246f28a0b715", "comment":"ok"},
     {  "id":"G4",
-        "mac":"246f280b0ccd", "comment":"ok"}
+        "mac":"246f280b0ccs", "comment":"ok"}
 ]
