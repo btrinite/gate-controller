@@ -28,7 +28,7 @@ mqttBroker.on ('published', (topic, payload) => {
   var topicTokens = topic.split('/');
   switch (topicTokens[1]) {
     case 'status':
-        console.log ("SYS: Rx event status from "+resolveLed.resolveStripId2Name(topicTokens[2]))
+        console.log ("SYS: Rx event status from "+topicTokens[2])
         console.log (payload.toString());
         break;
   }
