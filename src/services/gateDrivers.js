@@ -58,9 +58,11 @@ class GateDrivers  {
     }
 
     publish(id, payload) {
+      /*
       if (ledCache.checkIfAlreadySent (id, payload)) {
         return
-      }            
+      }*/
+                  
       const message = this.msgFactory (id, payload)
       mqttBroker.publish(message)  
     }
