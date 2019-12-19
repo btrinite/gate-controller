@@ -25,11 +25,26 @@
         },
         "simple": {
             "sequences":[
-                {"id":"G0", "figure":"PassIn"},
-                {"id":"G1", "figure":"AvoidLeft"},
-                {"id":"G2", "figure":"AvoidRight"},
-                {"id":"G3", "figure":"PassIn"},
-                {"id":"restart", "type":"restartOnTimeout", "delay":5000}
+                {"id":"G0", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"AvoidLeft", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"AvoidRight", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"AvoidAbove", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"AvoidBelow", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"PassLeft", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"PassRight", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"PassTop", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"G0", "figure":"PassBottom", "anim":"EFFECT_FIX"},
+                {"id":"restart", "type":"restartOnTimeout", "delay":2000}
             ]
         }
     }
