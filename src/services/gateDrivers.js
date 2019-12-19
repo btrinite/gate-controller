@@ -31,6 +31,7 @@ class GateDrivers  {
     setDriverState (mac, state) {
       const drvId = this.resolveMac2ID (mac)
       if (drvId>=0) {
+        console.log (`GateDrivers : ${drvId} switched to state ${state}`)
         this.driversState[drvId].state = state
       }
     }
@@ -38,6 +39,7 @@ class GateDrivers  {
     msgFactory(id, msg) {
       var idx = this.resolveId2Mac(id)
       if (idx>=0) {
+        console.log (`Built message for gate index ${idx} mac ${gateDriversDescr[idx].mac}`)
         return {
           topic: `/${gateDriversDescr[idx].mac}`,
           payload: msg,
@@ -62,7 +64,7 @@ class GateDrivers  {
       if (ledCache.checkIfAlreadySent (id, payload)) {
         return
       }*/
-                  
+
       const message = this.msgFactory (id, payload)
       mqttBroker.publish(message)  
     }
