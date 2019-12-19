@@ -26,9 +26,9 @@
         "simple": {
             "sequences":[
                 {"id":"G0", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"Pause", "type":"pause", "delay":1500},
                 {"id":"G0", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":500},
+                {"id":"Pause", "type":"pause", "delay":1500},
                 {"id":"G0", "type":"figure", "figure":"AvoidLeft", "anim":"EFFECT_FIX"},
                 {"id":"Pause", "type":"pause", "delay":500},
                 {"id":"G0", "type":"figure", "figure":"AvoidRight", "anim":"EFFECT_FIX"},
