@@ -39,7 +39,6 @@ class GateDrivers  {
     msgFactory(id, msg) {
       var idx = this.resolveId2Mac(id)
       if (idx>=0) {
-        console.log (`Built message for gate index ${idx} mac ${gateDriversDescr[idx].mac}`)
         return {
           topic: `/${gateDriversDescr[idx].mac}`,
           payload: msg,
