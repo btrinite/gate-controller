@@ -68,10 +68,11 @@ class GateDrivers  {
     update (id, figure, anim) {
       const gate = gateDriversDescr.findIndex((aGate)=>{return (aGate.id===id)})
       if (gate >=0) {
+        var msg=''
         for ( const [idx, fig] of figures[figure].segments.entries() ) {
-          const msg = `${idx},${segment2color[fig].r},${segment2color[fig].g},${segment2color[fig].b},255,${anim2value[anim]}`
-          this.publish(id, msg)
+          msg = msg.concat(`${idx},${segment2color[fig].r},${segment2color[fig].g},${segment2color[fig].b},255,${anim2value[anim]};`)
         }
+        this.publish(id, msg)
       }
     }
 }
