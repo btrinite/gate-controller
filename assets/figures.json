@@ -8,5 +8,8 @@
     "PassLeft" : { "segments":["on", "off", "off", "off", "off", "on", "on", "on"]},
     "PassRight" : { "segments":["off", "on", "on", "on", "on", "off", "off", "off"]},
     "PassTop" : { "segments":["on", "on", "on", "off", "off", "off", "off", "on"]},
-    "PassBottom" : { "segments":["off", "off", "off", "on", "on", "on", "on", "off"]}
+    "PassBottom" : { "segments":["off", "off", "off", "on", "on", "on", "on", "off"]},
+    "seg_a1" : { "segments":["on", "off", "off", "off", "off", "off", "off", "off"]},
+    "seg-a2" : { "segments":["off", "on", "off", "off", "off", "off", "off", "off"]}
+
 }
