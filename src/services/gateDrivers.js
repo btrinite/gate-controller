@@ -28,14 +28,6 @@ class GateDrivers  {
       return gateDriversDescr.findIndex((aGate)=>{return (aGate.id===id)})
     }
 
-    setDriverState (mac, state) {
-      const drvId = this.resolveMac2ID (mac)
-      if (drvId>=0) {
-        console.log (`GateDrivers : ${drvId} switched to state ${state}`)
-        this.driversState[drvId].state = state
-      }
-    }
-
     msgFactory(id, msg) {
       var idx = this.resolveId2Mac(id)
       if (idx>=0) {
@@ -47,6 +39,29 @@ class GateDrivers  {
           };  
       } else {
         return undefined
+      }
+    }
+
+    msgStatusFactory(id, msg) {
+      var idx = this.resolveId2Mac(id)
+      if (idx>=0) {
+        return {
+          topic: `/status}`,
+          payload: `{"id":"${gateDriversDescr[idx].mac}","status":"${msg}"`,
+          qos: 0, // 0, 1, or 2
+          retain: false // or true
+          };  
+      } else {
+        return undefined
+      }
+    }
+
+    setDriverState (mac, state) {
+      const drvId = this.resolveMac2ID (mac)
+      if (drvId>=0) {
+        console.log (`GateDrivers : ${drvId} switched to state ${state}`)
+        this.driversState[drvId].state = state
+        this.msgStatusFactory(drvId, state)
       }
     }
 
