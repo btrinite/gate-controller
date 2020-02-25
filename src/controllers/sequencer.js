@@ -49,24 +49,24 @@ class Sequencer extends EventEmitter {
                 break;
                 case 'nextOnTimeout':
                         await this.sleep(aStep.delay);
-                        setTimeout (()=>{this._nextStep()},10);
+                        setTimeout (()=>{this.nextStep()},10);
                 break;
                 case 'restartOnTimeout':
                         await this.sleep(aStep.delay);
-                        setTimeout (()=>{this._init()},10);
+                        setTimeout (()=>{this.init()},10);
                 break;
 
             }
         }
     }
 
-    async _init () {
+    async init () {
         this.rewindSequence()
         this.cancelSleep()
         await this.runCurrentSequence()
     }
 
-    async _nextStep () {
+    async nextStep () {
         this.cancelSleep()
         this.incSequence()
         await this.runCurrentSequence()
@@ -75,10 +75,10 @@ class Sequencer extends EventEmitter {
     cmd(cmd) {
         switch (cmd) {
             case 'step':
-                this._nextStep();
+                this.nextStep();
                 break;
             case 'init':
-                this._init();
+                this.init();
                 break;
             }
     }
