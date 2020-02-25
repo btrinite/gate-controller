@@ -61,9 +61,9 @@ class GateDrivers  {
       if (drvId>=0) {
         console.log (`GateDrivers : ${drvId} switched to state ${state}`)
         this.driversState[drvId].state = state
-        const message = this.msgStatusFactory()
-        mqttBroker.publish(message)  
       }
+      const message = this.msgStatusFactory()
+      mqttBroker.publish(message)  
     }
 
     rePublishLast (id) {
