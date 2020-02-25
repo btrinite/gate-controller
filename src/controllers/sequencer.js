@@ -72,12 +72,15 @@ class Sequencer extends EventEmitter {
         await this.runCurrentSequence()
     }
 
-    step() {
-        this._nextStep();
-    }
-
-    init() {
-        this._init();
+    cmd(cmd) {
+        switch (cmd) {
+            case 'step':
+                this._nextStep();
+                break;
+            case 'init':
+                this._init();
+                break;
+            }
     }
 }
 
