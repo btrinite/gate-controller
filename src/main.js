@@ -32,7 +32,11 @@ mqttBroker.on ('published', (topic, payload) => {
         console.log ("SYS: Rx event status from "+topicTokens[2])
         console.log (payload.toString());
         break;
-  }
+    case 'cmd':
+        console.log ("SYS: Rx event cmd from "+topicTokens[2])
+        console.log (payload.toString());
+        break;
+    }
 })
 
 mqttBroker.on ('ready', () => {
