@@ -1,16 +1,16 @@
 {
     "Off" : { "segments":["off", "off", "off", "off", "off", "off", "off", "off"]},
-    "PassIn" : { "segments":["on", "on", "on", "on", "on", "on", "on", "on"]},
-    "Avoid" : { "segments":["off", "off", "off", "off", "off", "off", "off", "off"]},
-    "AvoidLeft" : { "segments":["off", "off", "off", "off", "off", "off", "on", "on"]},
-    "AvoidRight" : { "segments":["off", "off", "on", "on", "off", "off", "off", "off"]},
-    "AvoidAbove" : { "segments":["on", "on", "off", "off", "off", "off", "off", "off"]},
-    "AvoidBelow" : { "segments":["off", "off", "off", "off", "on", "on", "off", "off"]},
-    "PassLeft" : { "segments":["on", "off", "off", "off", "off", "on", "on", "on"]},
-    "PassRight" : { "segments":["off", "on", "on", "on", "on", "off", "off", "off"]},
-    "PassTop" : { "segments":["on", "on", "on", "off", "off", "off", "off", "on"]},
-    "PassBottom" : { "segments":["off", "off", "off", "on", "on", "on", "on", "off"]},
-    "seg_a1" : { "segments":["on", "off", "off", "off", "off", "off", "off", "off"]},
-    "seg-a2" : { "segments":["off", "on", "off", "off", "off", "off", "off", "off"]}
+    "PassIn" : { "segments":["pass", "pass", "pass", "pass", "pass", "pass", "pass", "pass"]},
+    "Avoid" : { "segments":["block", "block", "block", "block", "block", "block", "block", "block"]},
+    "AvoidLeft" : { "segments":["block", "block", "block", "block", "block", "block", "pass", "pass"]},
+    "AvoidRight" : { "segments":["block", "block", "pass", "pass", "block", "block", "block", "block"]},
+    "AvoidAbove" : { "segments":["pass", "pass", "block", "block", "block", "block", "block", "block"]},
+    "AvoidBelow" : { "segments":["block", "block", "block", "block", "pass", "pass", "block", "block"]},
+    "PassLeft" : { "segments":["pass", "block", "block", "block", "block", "pass", "pass", "pass"]},
+    "PassRight" : { "segments":["block", "pass", "pass", "pass", "pass", "block", "block", "block"]},
+    "PassTop" : { "segments":["pass", "pass", "pass", "block", "block", "block", "block", "pass"]},
+    "PassBottom" : { "segments":["block", "block", "block", "pass", "pass", "pass", "pass", "block"]},
+    "seg_a1" : { "segments":["pass", "block", "block", "block", "block", "block", "block", "block"]},
+    "seg-a2" : { "segments":["block", "pass", "block", "block", "block", "block", "block", "block"]}
 
 }

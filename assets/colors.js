@@ -15,5 +15,5 @@ global.LED_ORANGE8 = { r: 253, g: 58, b: 45 };
 global.LED_ORANGE9 = { r: 241, g: 29, b: 40 };
 global.LED_OFF = { r: 0, g: 0, b: 0 };
 global.LED_YELLOW = { r: 255, g: 255, b: 0 };
-global.segment2color = {'on':LED_GREEN, 'off':LED_RED}
+global.segment2color = {'pass':LED_GREEN, 'block':LED_RED, 'off':LED_OFF}
 global.anim2value = {'EFFECT_FIX':0, 'EFFECT_ALT':1, 'EFFECT_FADE':2}
