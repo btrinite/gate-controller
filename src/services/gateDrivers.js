@@ -75,7 +75,7 @@ class GateDrivers  {
 
     publishToGate(id, payload) {
       const msg = this.msgFactory (id, payload)
-      self.publish(msg)
+      this.publish(msg)
     }
 
     publish (id, msg) {
