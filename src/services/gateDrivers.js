@@ -42,7 +42,7 @@ class GateDrivers  {
       }
     }
 
-    msgStatusFactory(id, msg) {
+    msgStatusFactory() {
       var msg  =  {
         topic: `/status}`,
         payload: ``,
@@ -50,9 +50,11 @@ class GateDrivers  {
         retain: false // or true
         };  
 
+      var state=[]
       for (const aGate of gateDriversDescr) {
-        msg.payload.concat(`"id":"${aGate.id}","state":"${this.driversState[aGate.id]}"`)
+        state[aGate.id].state=this.driversState[aGate.id]
       }
+      msg.payload=JSON.stringify(state)
       return msg
     }
 
