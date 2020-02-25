@@ -69,7 +69,7 @@ class GateDrivers  {
     }
 
     rePublishLast (mac) {
-      const idx = resolveMac2ID(mac)
+      const idx = this.resolveMac2ID(mac)
       if (drvId>=0) {
         const msg = cache.getLastPayload(gateDriversDescr[drvId].id)
         if (msg!=undefined) {
