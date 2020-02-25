@@ -69,7 +69,7 @@ class GateDrivers  {
     rePublishLast (id) {
       const msg = cache.getLastPayload(id)
       if (msg!=undefined) {
-        this.publish(msg)  
+        mqttBroker.publish(msg)  
       };  
     }
 
