@@ -49,27 +49,35 @@ class Sequencer extends EventEmitter {
                 break;
                 case 'nextOnTimeout':
                         await this.sleep(aStep.delay);
-                        setTimeout (()=>{this.nextStep()},10);
+                        setTimeout (()=>{this._nextStep()},10);
                 break;
                 case 'restartOnTimeout':
                         await this.sleep(aStep.delay);
-                        setTimeout (()=>{this.init()},10);
+                        setTimeout (()=>{this._init()},10);
                 break;
 
             }
         }
     }
 
-    async init () {
+    async _init () {
         this.rewindSequence()
         this.cancelSleep()
         await this.runCurrentSequence()
     }
 
-    async nextStep () {
+    async _nextStep () {
         this.cancelSleep()
         this.incSequence()
         await this.runCurrentSequence()
+    }
+
+    step() {
+        this._nextStep();
+    }
+
+    init() {
+        this._init();
     }
 }
 

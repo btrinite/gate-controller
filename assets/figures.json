@@ -1,4 +1,5 @@
 {
+    "Off" : { "segments":["off", "off", "off", "off", "off", "off", "off", "off"]},
     "PassIn" : { "segments":["on", "on", "on", "on", "on", "on", "on", "on"]},
     "Avoid" : { "segments":["off", "off", "off", "off", "off", "off", "off", "off"]},
     "AvoidLeft" : { "segments":["off", "off", "off", "off", "off", "off", "on", "on"]},
