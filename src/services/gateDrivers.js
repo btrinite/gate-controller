@@ -52,7 +52,7 @@ class GateDrivers  {
 
       var state=[]
       for (const aGate of gateDriversDescr) {
-        state[aGate.id].state=this.driversState[aGate.id]
+        state.push({id:aGate.id, state:this.driversState[aGate.id]})
       }
       msg.payload=JSON.stringify(state)
       return msg
