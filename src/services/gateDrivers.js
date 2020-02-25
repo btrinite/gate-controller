@@ -68,11 +68,14 @@ class GateDrivers  {
       mqttBroker.publish(message)  
     }
 
-    rePublishLast (id) {
-      const msg = cache.getLastPayload(id)
-      if (msg!=undefined) {
-        mqttBroker.publish(msg)  
-      };  
+    rePublishLast (mac) {
+      const idx = resolveMac2ID(mac)
+      if (drvId>=0) {
+        const msg = cache.getLastPayload(gateDriversDescr[drvId].id)
+        if (msg!=undefined) {
+          mqttBroker.publish(msg)  
+        };
+      }  
     }
 
     publishToGate(id, payload) {
