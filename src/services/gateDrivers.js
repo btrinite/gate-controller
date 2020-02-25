@@ -51,7 +51,7 @@ class GateDrivers  {
         };  
 
       for (const aGate of gateDriversDescr) {
-        msg.payload.concat(`"id":"${aGate.id}","state":"${this.driversState[drvId].state}"`)
+        msg.payload.concat(`"id":"${aGate.id}","state":"${this.driversState[aGate.id].state}"`)
       }
       return msg
     }
