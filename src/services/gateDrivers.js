@@ -62,7 +62,7 @@ class GateDrivers  {
       const drvId = this.resolveMac2ID (mac)
       if (drvId>=0) {
         console.log (`GateDrivers : ${drvId} switched to state ${state}`)
-        this.driversState[drvId].state = state
+        this.driversState[gateDriversDescr[drvId].id].state = state
       }
       const message = this.msgStatusFactory()
       mqttBroker.publish(message)  
