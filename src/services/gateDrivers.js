@@ -94,7 +94,7 @@ class GateDrivers  {
         for ( const [idx, fig] of figures[figure].segments.entries() ) {
           msg = msg.concat(`${idx},${segment2color[fig].r},${segment2color[fig].g},${segment2color[fig].b},255,${anim2value[anim]};`)
         }
-        this.publishToGate(id, msg)
+        this.publishToGate(gate.id, msg)
       }
     }
 }
