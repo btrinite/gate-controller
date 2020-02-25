@@ -33,10 +33,10 @@ mqttBroker.on ('published', (topic, payload) => {
         console.log (payload.toString());
         break;
     case 'cmd':
-        const cmd = JSON.parse(payload)
         console.log ("SYS: Rx event cmd from "+topicTokens[2])
         console.log (payload.toString());
-        sequencer.cmd(cmd)
+        const cmd = JSON.parse(payload)
+        sequencer.cmd(cmd.cmd)
         break;
     }
 })
