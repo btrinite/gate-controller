@@ -6,7 +6,7 @@ class Cache  {
     }
 
     checkIfAlreadySent (id, msg) {
-        if (lastMessages[id].payload != msg.payload) {
+        if ((lastMessages[id] != undefined) && (lastMessages[id].payload != msg.payload)) {
             lastMessages[id] = msg;
             return false;
         } else {
