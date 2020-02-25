@@ -16,7 +16,7 @@ class GateDrivers  {
     constructor() {
       this.driversState={}
       for (const [idx, drv] of gateDriversDescr.entries()) {
-        this.driversState[idx] = {state:GATE.DISCONNECTED}
+        this.driversState[drv.id] = {state:GATE.DISCONNECTED}
       }
     }
 
@@ -52,7 +52,7 @@ class GateDrivers  {
 
       var state=[]
       for (const aGate of gateDriversDescr) {
-        state.push({id:aGate.id, state:this.driversState[aGate.id]})
+        state.push({id:aGate.id, state:this.driversState[aGate.id].state})
       }
       msg.payload=JSON.stringify(state)
       return msg
