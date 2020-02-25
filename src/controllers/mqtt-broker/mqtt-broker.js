@@ -1,7 +1,7 @@
 // MQTT Local server w/o DB Storage
 const mosca = require("mosca");
 const EventEmitter = require('events');
-const  ledCache = require('../../services/led-cache')
+const cache = require('../../services/cache')
 
 
 var moscaSettings = {
@@ -40,7 +40,7 @@ class MqttBroker extends EventEmitter {
         this.server.on("subscribed", (topic, client) => {
             if (client != undefined && client.id != undefined) {
                 //console.log("MQTT Broker : client disconnected :" + client.id);
-                this.emit('subscribed', topic, client.id);    
+                this.emit('subscribed', topic, client.id); 
             }
         });
         this.server.on("published", (packet, client) => {

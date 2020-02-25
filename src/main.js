@@ -11,6 +11,7 @@ mqttBroker.on ('clientConnected', (client_id) => {
 mqttBroker.on ('subscribed', (topic, client_id) => {
   console.log (`New MQTT subscription to topic ${topic} from client ${client_id}`);
   gateDrivers.setDriverState(client_id, GATE.SUBSCRIBED)
+  gateDrivers.rePublishLast(client_id)
 })
 
 mqttBroker.on ('clientDisconnected', (client_id) => {

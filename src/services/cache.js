@@ -1,6 +1,6 @@
 var lastMessages = [];
 
-class LedCache  {
+class Cache  {
 
     constructor() {
     }
@@ -29,5 +29,5 @@ class LedCache  {
 }
 
 
-const ledCache = new LedCache();
-module.exports = ledCache;
+const cache = new Cache();
+module.exports = cache;

@@ -3,7 +3,7 @@ const gateDriversDescr = JSON.parse(fs.readFileSync("assets/gateDrivers.json"));
 const figures = JSON.parse(fs.readFileSync("assets/figures.json"));
 require ("../../assets/colors.js")
 const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
-const ledCache = require('./led-cache');
+const cache = require('./cache');
 
 global.GATE={}
 global.GATE.CONNECTED="connected"
@@ -43,17 +43,17 @@ class GateDrivers  {
     }
 
     msgStatusFactory(id, msg) {
-      var idx = this.resolveId2Mac(id)
-      if (idx>=0) {
-        return {
-          topic: `/status}`,
-          payload: `{"id":"${gateDriversDescr[idx].mac}","status":"${msg}"`,
-          qos: 0, // 0, 1, or 2
-          retain: false // or true
-          };  
-      } else {
-        return undefined
+      var msg  =  {
+        topic: `/status}`,
+        payload: ``,
+        qos: 0, // 0, 1, or 2
+        retain: false // or true
+        };  
+
+      for (const aGate of gateDriversDescr) {
+        msg.payload.concat(`"id":"${aGate.id}","state":"${this.driversState[drvId].state}"`)
       }
+      return msg
     }
 
     setDriverState (mac, state) {
@@ -61,12 +61,13 @@ class GateDrivers  {
       if (drvId>=0) {
         console.log (`GateDrivers : ${drvId} switched to state ${state}`)
         this.driversState[drvId].state = state
-        this.msgStatusFactory(drvId, state)
+        const message = this.msgStatusFactory()
+        mqttBroker.publish(message)  
       }
     }
 
     rePublishLast (id) {
-      const payload = ledCache.getLastPayload(id)
+      const payload = cache.getLastPayload(id)
       if (payload!=undefined) {
         const message = this.msgFactory (id, payload)
         mqttBroker.publish(message)  
@@ -74,11 +75,9 @@ class GateDrivers  {
     }
 
     publish(id, payload) {
-      /*
-      if (ledCache.checkIfAlreadySent (id, payload)) {
+      if (cache.checkIfAlreadySent (id, payload)) {
         return
-      }*/
-
+      }
       const message = this.msgFactory (id, payload)
       mqttBroker.publish(message)  
     }
