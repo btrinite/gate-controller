@@ -5,9 +5,9 @@ class Cache  {
     constructor() {
     }
 
-    checkIfAlreadySent (id, payload) {
-        if (lastMessages[id] != payload) {
-            lastMessages[id] = payload;
+    checkIfAlreadySent (id, msg) {
+        if (lastMessages[id].payload != msg.payload) {
+            lastMessages[id] = msg;
             return false;
         } else {
             return true;
@@ -15,7 +15,7 @@ class Cache  {
     }
 
     flush (id) {
-        lastMessages[id] = ""
+        lastMessages[id] = {}
     }
 
     flushAll () {

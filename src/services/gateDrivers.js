@@ -67,19 +67,22 @@ class GateDrivers  {
     }
 
     rePublishLast (id) {
-      const payload = cache.getLastPayload(id)
-      if (payload!=undefined) {
-        const message = this.msgFactory (id, payload)
-        mqttBroker.publish(message)  
+      const msg = cache.getLastPayload(id)
+      if (msg!=undefined) {
+        this.publish(msg)  
       };  
     }
 
-    publish(id, payload) {
-      if (cache.checkIfAlreadySent (id, payload)) {
+    publishToGate(id, payload) {
+      const msg = this.msgFactory (id, payload)
+      self.publish(msg)
+    }
+
+    publish (id, msg) {
+      if (cache.checkIfAlreadySent (id, msg)) {
         return
       }
-      const message = this.msgFactory (id, payload)
-      mqttBroker.publish(message)  
+      mqttBroker.publish(msg)  
     }
 
     update (id, figure, anim) {
@@ -89,7 +92,7 @@ class GateDrivers  {
         for ( const [idx, fig] of figures[figure].segments.entries() ) {
           msg = msg.concat(`${idx},${segment2color[fig].r},${segment2color[fig].g},${segment2color[fig].b},255,${anim2value[anim]};`)
         }
-        this.publish(id, msg)
+        this.publishToGate(id, msg)
       }
     }
 }
