@@ -17,7 +17,7 @@
                 {"id":"G4", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
                 {"id":"G5", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
                 {"id":"G6", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G7", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
+                {"id":"G7", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"}
             ]
         },
         "simple": {
@@ -34,7 +34,7 @@
                 {"id":"Pause", "type":"pause", "delay":200},
                 {"id":"G6", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
                 {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G7", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
+                {"id":"G7", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"}
             ]
         }
     }
