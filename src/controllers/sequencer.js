@@ -101,7 +101,7 @@ class Sequencer extends EventEmitter {
             }
     }
     async getAvailableSequences() {
-        items = await readDirAsync(SEQDIR)       
+        const items = await readDirAsync(SEQDIR)       
         for (var i=0; i<items.length; i++) {
             if (items[i].indexOf('.json')) {
                 console.log("Sequence : Loading "+items[i]);
