@@ -117,7 +117,7 @@ class Sequencer extends EventEmitter {
     initSequence(){
         this.maxSequence=this.availableSequences[this.selectedSequence].sequences.length
         this.init()
-        const payload={selectedSeq: this.selectedSequence}
+        const payload={selectedSeq: this.availableSequences[this.selectedSequence].title}
         const message = this.msgSeqFactory(payload)
         mqttBroker.publish(message)  
     }
