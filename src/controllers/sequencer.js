@@ -86,10 +86,9 @@ class Sequencer extends EventEmitter {
     getAvailableSequences() {
         fs.readdir(SEQDIR, function(err, items) {         
             for (var i=0; i<items.length; i++) {
-                console.log (items[i])
-                if (items[i].filename.indexOf('.json')) {
-                    console.log(items[i]);
-                    fs.readFile(SEQDIR+items[i].filename, function read(err, data) {
+                if (items[i].indexOf('.json')) {
+                    console.log("Sequence : Loading "+items[i]);
+                    fs.readFile(SEQDIR+items[i], function read(err, data) {
                         availableSequences.push(JSON.parse(data))
                     })
                 }
