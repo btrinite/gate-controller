@@ -44,7 +44,7 @@ mqttBroker.on ('published', (topic, payload) => {
 mqttBroker.on ('ready', () => {
   console.log ("Starting sequencer")
   sequencer.init();
-  sequencer.getAvailableSequences();
+  await sequencer.getAvailableSequences();
   sequencer.initSequence();
 });
 
