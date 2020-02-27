@@ -1,8 +1,9 @@
 const EventEmitter = require('events');
 const fs = require("fs");
 
-const sequence = JSON.parse(fs.readFileSync("assets/sequences/sequence.json"));
 const gateDrivers = require('../services/gateDrivers')
+const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
+
 const SEQDIR="./assets/sequences/"
 
 class Sequencer extends EventEmitter {
@@ -11,8 +12,20 @@ class Sequencer extends EventEmitter {
         super();
         this.currentSerquence=0
         this.timer=null
-        this.maxSequence=sequence.sequences.length
+        this.maxSequence=0
         this.availableSequences = []
+        this.selectedSequence = 0
+    }
+
+    msgSeqFactory(payload) {
+        var msg  =  {
+          topic: `/sequence`,
+          payload: JSON.stringify(payload),
+          qos: 0, // 0, 1, or 2
+          retain: false // or true
+          };  
+  
+        return msg
     }
 
     rewindSequence() {
@@ -37,9 +50,9 @@ class Sequencer extends EventEmitter {
     }
 
     async runCurrentSequence() {
-        const subset = sequence.sequences[this.currentSerquence]
+        const subset = this.availableSequences[this.selectedSequence].sequences[this.currentSerquence]
         console.log (`Running sequence ${this.currentSerquence} ${subset}`)
-        for (const aStep of sequence.subsets[subset].sequences) {
+        for (const aStep of this.availableSequences[this.selectedSequence].subsets[subset].sequences) {
             console.log (aStep)
             switch (aStep.type) {
                 case 'pause':
@@ -94,9 +107,20 @@ class Sequencer extends EventEmitter {
                 }
             }        
         })
+
     }
 
-    selectSequences() {
+    initSequence(){
+        this.maxSequence=this.availableSequences[this.selectedSequence].sequences.length
+        this.init()
+        const payload={selectedSeq: idx}
+        const message = this.msgSeqFactory(payload)
+        mqttBroker.publish(message)  
+    }
+
+    selectNextSequenceSet() {
+        this.selectedSequence = (this.selectedSequence+1)%this.availableSequences.length;
+        this.initSequence()
     }
 }
 const sequencer = new Sequencer();
