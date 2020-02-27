@@ -1,4 +1,5 @@
 {
+    "title" : "Drone",
     "sequences":["initial", "simple"],
     "subsets":{
         "initial": {

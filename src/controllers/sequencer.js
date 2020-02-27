@@ -1,9 +1,9 @@
 const EventEmitter = require('events');
 const fs = require("fs");
 
-const sequence = JSON.parse(fs.readFileSync("assets/sequence.json"));
+const sequence = JSON.parse(fs.readFileSync("assets/sequences/sequence.json"));
 const gateDrivers = require('../services/gateDrivers')
- 
+const SEQDIR="./assets/sequences/"
 
 class Sequencer extends EventEmitter {
 
@@ -12,6 +12,7 @@ class Sequencer extends EventEmitter {
         this.currentSerquence=0
         this.timer=null
         this.maxSequence=sequence.sequences.length
+        this.availableSequences = []
     }
 
     rewindSequence() {
@@ -82,8 +83,22 @@ class Sequencer extends EventEmitter {
                 break;
             }
     }
-}
+    getAvailableSequences() {
+        fs.readdir(SEQDIR, function(err, items) {         
+            for (var i=0; i<items.length; i++) {
+                if (items[i].filename.indexOf('.json')) {
+                    console.log(items[i]);
+                    fs.readFile(SEQDIR+items[i].filename, function read(err, data) {
+                        availableSequences.push(JSON.parse(data))
+                    })
+                }
+            }        
+        })
+    }
 
+    selectSequences() {
+    }
+}
 const sequencer = new Sequencer();
 module.exports = sequencer;
 

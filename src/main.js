@@ -46,4 +46,5 @@ mqttBroker.on ('ready', () => {
   sequencer.init();
 });
 
+sequencer.getAvailableSequences();
 mqttBroker.connect();
