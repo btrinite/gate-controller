@@ -1,5 +1,9 @@
 const EventEmitter = require('events');
 const fs = require("fs");
+const { promisify } = require('util')
+
+const readDirAsync = promisify(fs.readDir)
+const readFileAsync = promisify(fs.readFile)
 
 const gateDrivers = require('../services/gateDrivers')
 const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
@@ -97,11 +101,11 @@ class Sequencer extends EventEmitter {
             }
     }
     async getAvailableSequences() {
-        items = await fs.readdir(SEQDIR)       
+        items = await readDirAsync(SEQDIR)       
         for (var i=0; i<items.length; i++) {
             if (items[i].indexOf('.json')) {
                 console.log("Sequence : Loading "+items[i]);
-                const data = await fs.readFile(SEQDIR+items[i])
+                const data = await readFileAsync(SEQDIR+items[i])
                 this.availableSequences.push(JSON.parse(data))
             }
         }        
