@@ -2,7 +2,7 @@ const EventEmitter = require('events');
 const fs = require("fs");
 const { promisify } = require('util')
 
-const readDirAsync = promisify(fs.readDir)
+const readDirAsync = promisify(fs.readdir)
 const readFileAsync = promisify(fs.readFile)
 
 const gateDrivers = require('../services/gateDrivers')
