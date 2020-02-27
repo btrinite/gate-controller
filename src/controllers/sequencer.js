@@ -96,18 +96,15 @@ class Sequencer extends EventEmitter {
                 break;
             }
     }
-    getAvailableSequences() {
-        fs.readdir(SEQDIR, (err, items) => {         
-            for (var i=0; i<items.length; i++) {
-                if (items[i].indexOf('.json')) {
-                    console.log("Sequence : Loading "+items[i]);
-                    fs.readFile(SEQDIR+items[i], (err, data) => {
-                        this.availableSequences.push(JSON.parse(data))
-                    })
-                }
-            }        
-        })
-
+    async getAvailableSequences() {
+        items = await fs.readdir(SEQDIR)       
+        for (var i=0; i<items.length; i++) {
+            if (items[i].indexOf('.json')) {
+                console.log("Sequence : Loading "+items[i]);
+                const data = await fs.readFile(SEQDIR+items[i])
+                this.availableSequences.push(JSON.parse(data))
+            }
+        }        
     }
 
     initSequence(){
