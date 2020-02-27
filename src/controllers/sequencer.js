@@ -98,6 +98,9 @@ class Sequencer extends EventEmitter {
             case 'init':
                 this.init();
                 break;
+            case 'nextSeq':
+                this.selectNextSequenceSet();
+                break;
             }
     }
     async getAvailableSequences() {
