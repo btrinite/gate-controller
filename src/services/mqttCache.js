@@ -33,9 +33,9 @@ class MqttCache  {
 
 
     rePublishLast (topic) {
-        const msg = mqttCqche.getLastPayload(topic)
+        const msg = this.getLastPayload(topic)
         if (msg!=undefined) {
-        mqttBroker.publish(msg)  
+            mqttBroker.publish(msg)  
         };
     }
 
