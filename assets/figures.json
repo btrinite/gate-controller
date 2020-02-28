@@ -10,7 +10,12 @@
     "PassRight" : { "segments":["block", "pass", "pass", "pass", "pass", "block", "block", "block"]},
     "PassTop" : { "segments":["pass", "pass", "pass", "block", "block", "block", "block", "pass"]},
     "PassBottom" : { "segments":["block", "block", "block", "pass", "pass", "pass", "pass", "block"]},
-    "seg_a1" : { "segments":["pass", "block", "block", "block", "block", "block", "block", "block"]},
-    "seg-a2" : { "segments":["block", "pass", "block", "block", "block", "block", "block", "block"]}
+    "ready-0" : { "segments":["block", "off", "off", "off", "off", "off", "off", "off"]},
+    "ready-1" : { "segments":["block", "block", "off", "off", "off", "off", "off", "off"]},
+    "ready-2" : { "segments":["block", "block", "block", "off", "off", "off", "off", "off"]},
+    "ready-3" : { "segments":["block", "block", "block", "block", "off", "off", "off", "off"]},
+    "ready-4" : { "segments":["block", "block", "block", "block", "block", "off", "off", "off"]},
+    "ready-5" : { "segments":["block", "block", "block", "block", "block", "block", "off", "off"]},
+    "ready-6" : { "segments":["block", "block", "block", "block", "block", "block", "block", "off"]}
 
 }

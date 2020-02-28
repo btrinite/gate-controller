@@ -5,45 +5,31 @@
         "initial": {
             "sequences":[
                 {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G2", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G3", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G4", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G5", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G6", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"G7", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
-                {"id":"Pause", "type":"pause", "delay":1000},
+                {"id":"Pause", "type":"pause", "delay":2000},
                 {"id":"G1", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G2", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G3", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G4", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G5", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G6", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
-                {"id":"G7", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"}
             ]
         },
         "simple": {
             "sequences":[
+                {"id":"G1", "type":"figure", "figure":"ready-0", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-1", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-2", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-3", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-4", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-5", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
+                {"id":"G1", "type":"figure", "figure":"ready-6", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":200},
                 {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G2", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G3", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G4", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G5", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G6", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
-                {"id":"G7", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
                 {"id":"Pause", "type":"pause", "delay":2000},
                 {"id":"G1", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G2", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G3", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G4", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G5", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G6", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
-                {"id":"Pause", "type":"pause", "delay":200},
-                {"id":"G7", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"}
+                {"id":"Pause", "type":"pause", "delay":5000},
+                {"id":"G1", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"}
             ]
         }
     }
