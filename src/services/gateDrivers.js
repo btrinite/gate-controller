@@ -68,16 +68,6 @@ class GateDrivers  {
       mqttBroker.publish(message)  
     }
 
-    rePublishLast (mac, topic) {
-      const drvId = this.resolveMac2ID(mac)
-      if (drvId>=0) {
-        const msg = mqttCqche.getLastPayloadForClient(gateDriversDescr[drvId].id, topic)
-        if (msg!=undefined) {
-          mqttBroker.publish(msg)  
-        };
-      }  
-    }
-
     publishToGate(id, payload) {
       const msg = this.msgFactory (id, payload)
       this.publish(msg)

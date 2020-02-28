@@ -1,5 +1,6 @@
-//Message cache, per topics
+const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
 
+//Message cache, per topics
 var lastMessages = [];
 
 class MqttCache  {
@@ -28,6 +29,14 @@ class MqttCache  {
 
     getLastPayload (topic) {
         return lastMessages[topic]
+    }
+
+
+    rePublishLast (topic) {
+        const msg = mqttCqche.getLastPayload(topic)
+        if (msg!=undefined) {
+        mqttBroker.publish(msg)  
+        };
     }
 
 }
