@@ -1,5 +1,5 @@
 {
-    "title" : "Drone",
+    "title" : "Cars",
     "sequences":["initial", "simple"],
     "subsets":{
         "initial": {
@@ -23,6 +23,14 @@
         },
         "simple": {
             "sequences":[
+                {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G2", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G3", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G4", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G5", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G6", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"G7", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FIX"},
+                {"id":"Pause", "type":"pause", "delay":2000},
                 {"id":"G1", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
                 {"id":"Pause", "type":"pause", "delay":200},
                 {"id":"G2", "type":"figure", "figure":"PassIn", "anim":"EFFECT_FIX"},
