@@ -2,7 +2,7 @@ require('dotenv').config()
 const mqttBroker = require('./controllers/mqtt-broker/mqtt-broker');
 const sequencer = require('./controllers/sequencer')
 const gateDrivers  = require('./services/gateDrivers')
-const mqttCache = require('./mqttCache');
+const mqttCache = require('./services/mqttCache');
 
 mqttBroker.on ('clientConnected', (client_id) => {
   console.log ("New MQTT connection from "+client_id);
