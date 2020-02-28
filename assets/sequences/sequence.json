@@ -6,7 +6,7 @@
             "sequences":[
                 {"id":"G1", "type":"figure", "figure":"Avoid", "anim":"EFFECT_FADE"},
                 {"id":"Pause", "type":"pause", "delay":2000},
-                {"id":"G1", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"},
+                {"id":"G1", "type":"figure", "figure":"Off", "anim":"EFFECT_FIX"}
             ]
         },
         "simple": {
