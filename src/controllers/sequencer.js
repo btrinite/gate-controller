@@ -7,7 +7,7 @@ const readFileAsync = promisify(fs.readFile)
 
 const gateDrivers = require('../services/gateDrivers')
 const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
-const mqttCache = require('./mqttCache');
+const mqttCache = require('./services/mqttCache');
 
 const SEQDIR="./assets/sequences/"
 
