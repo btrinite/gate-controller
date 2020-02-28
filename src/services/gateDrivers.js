@@ -3,7 +3,7 @@ const gateDriversDescr = JSON.parse(fs.readFileSync("assets/gateDrivers.json"));
 const figures = JSON.parse(fs.readFileSync("assets/figures.json"));
 require ("../../assets/colors.js")
 const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
-const cache = require('./cache');
+const mqttCache = require('./mqttCache');
 
 global.GATE={}
 global.GATE.CONNECTED="connected"
@@ -68,10 +68,10 @@ class GateDrivers  {
       mqttBroker.publish(message)  
     }
 
-    rePublishLast (mac) {
+    rePublishLast (mac, topic) {
       const drvId = this.resolveMac2ID(mac)
       if (drvId>=0) {
-        const msg = cache.getLastPayload(gateDriversDescr[drvId].id)
+        const msg = mqttCqche.getLastPayloadForClient(gateDriversDescr[drvId].id, topic)
         if (msg!=undefined) {
           mqttBroker.publish(msg)  
         };
@@ -84,7 +84,7 @@ class GateDrivers  {
     }
 
     publish (id, msg) {
-      if (cache.checkIfAlreadySent (id, msg)) {
+      if (mqttCache.checkIfAlreadySent (id, msg)) {
         return
       }
       mqttBroker.publish(msg)  

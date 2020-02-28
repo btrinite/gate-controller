@@ -1,7 +1,6 @@
 // MQTT Local server w/o DB Storage
 const mosca = require("mosca");
 const EventEmitter = require('events');
-const cache = require('../../services/cache')
 
 
 var moscaSettings = {
