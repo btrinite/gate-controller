@@ -80,11 +80,11 @@ class GateDrivers  {
 
     publishToGate(id, payload) {
       const msg = this.msgFactory (id, payload)
-      this.publish(id, msg)
+      this.publish(msg)
     }
 
-    publish (id, msg) {
-      if (mqttCache.checkIfAlreadySent (id, msg)) {
+    publish (msg) {
+      if (mqttCache.checkIfAlreadySent (msg)) {
         return
       }
       mqttBroker.publish(msg)  

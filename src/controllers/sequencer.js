@@ -7,6 +7,7 @@ const readFileAsync = promisify(fs.readFile)
 
 const gateDrivers = require('../services/gateDrivers')
 const mqttBroker = require('../controllers/mqtt-broker/mqtt-broker');
+const mqttCache = require('./mqttCache');
 
 const SEQDIR="./assets/sequences/"
 
@@ -114,12 +115,19 @@ class Sequencer extends EventEmitter {
         }        
     }
 
+    publish (msg) {
+        if (mqttCache.checkIfAlreadySent (msg)) {
+          return
+        }
+        mqttBroker.publish(msg)  
+      }
+  
     initSequence(){
         this.maxSequence=this.availableSequences[this.selectedSequence].sequences.length
         this.init()
         const payload={selectedSeq: this.availableSequences[this.selectedSequence].title}
         const message = this.msgSeqFactory(payload)
-        mqttBroker.publish(message)  
+        this.publish(message)  
     }
 
     selectNextSequenceSet() {
